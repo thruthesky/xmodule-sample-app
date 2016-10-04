@@ -1,0 +1,18 @@
+<!--
+  Generated template for the Resign page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <xapi-header [appTitle]="appTitle"></xapi-header>
+</ion-header>
+<ion-content padding>
+  <xapi-resign
+      (beforeRequest)="onBeforeRequest($event)"
+      (afterRequest)="onAfterRequest($event)"
+      (success)="onSuccess($event)"
+      (cancel)="onCancel($event)"
+      (error)="onError($event)"
+  ></xapi-resign>
+</ion-content>

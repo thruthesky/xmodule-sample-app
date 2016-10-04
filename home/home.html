@@ -1,0 +1,30 @@
+<ion-header>
+  <xapi-header #Header [appTitle]="appTitle"></xapi-header>
+</ion-header>
+<ion-content padding>
+
+  <section *ngIf="user">
+    Welcome {{ user.user_login }}, ...
+    <div class="buttons">
+      <button ion-button (click)="onClickUpdate()">Update</button>
+      <button ion-button (click)="onClickChangePassword()">Chnage Password</button>
+      <button ion-button (click)="onClickLogout()">Logout</button>
+      <button ion-button (click)="onClickResign()">Resign</button>
+    </div>
+  </section>
+  <section *ngIf="!user">
+    <div class="buttons">
+      <button ion-button (click)="onClickLogin()">Login</button>
+      <button ion-button (click)="onClickRegister()">Register</button>
+    </div>
+  </section>
+
+<ul>
+  TODO
+  <li>User primary photo update</li>
+  <li>Post crud</li>
+  <li>Open it on web with domain on other server. not in backend server.</li>
+  <li>Comment crud</li>
+  <li>side menu</li>
+  </ul>
+</ion-content>
