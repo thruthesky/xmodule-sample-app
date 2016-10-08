@@ -3,6 +3,8 @@ import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
 import { PasswordPage } from '../password/password';
 import { ResignPage } from '../resign/resign';
+import { ForumCategoryPage } from '../forum-category/forum-category';
+import { PostListPage } from '../post-list/post-list';
 import { NavController, Events } from 'ionic-angular';
 import * as xi from '../../xmodule/interfaces/xapi';
 import { Xapi } from '../../xmodule/providers/xapi';
@@ -20,6 +22,7 @@ export class HomePage {
     //this.navCtrl.push( Login );
     //this.navCtrl.push( RegisterPage );
     //this.navCtrl.push( PasswordPage );
+    this.navCtrl.push( ForumCategoryPage );
 
     this.events.subscribe( 'logout', () => {
       console.log('HomePage::constructor::event logout');
@@ -37,6 +40,10 @@ export class HomePage {
       console.log('HomePage::constructor::event register');
       this.login(x);
     });
+  }
+  
+  ionViewDidLoad() {
+    console.log("HomePage::ionViewDidLoad()");
   }
   login( u: xi.UserLoginData ) {
     this.user = u;
@@ -64,5 +71,11 @@ export class HomePage {
   }
   onClickResign() {
     this.navCtrl.push( ResignPage );
+  }
+  onClickCategory() {
+    this.navCtrl.push( ForumCategoryPage );
+  }
+  onClickQnA() {
+    this.navCtrl.push( PostListPage, {'slug':'qna'} );
   }
 }
