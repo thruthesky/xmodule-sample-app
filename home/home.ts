@@ -5,6 +5,7 @@ import { PasswordPage } from '../password/password';
 import { ResignPage } from '../resign/resign';
 import { ForumCategoryPage } from '../forum-category/forum-category';
 import { PostListPage } from '../post-list/post-list';
+import { PostEditPage } from '../post-edit/post-edit';
 import { NavController, Events } from 'ionic-angular';
 import * as xi from '../../xmodule/interfaces/xapi';
 import { Xapi } from '../../xmodule/providers/xapi';
@@ -25,7 +26,8 @@ export class HomePage {
     //this.navCtrl.push( Login );
     //this.navCtrl.push( RegisterPage );
     //this.navCtrl.push( PasswordPage );
-    this.navCtrl.push( ForumCategoryPage );
+    //this.navCtrl.push( ForumCategoryPage );
+    this.navCtrl.push( PostEditPage );
 
     this.events.subscribe( 'logout', () => {
       console.log('HomePage::constructor::event logout');
@@ -46,7 +48,7 @@ export class HomePage {
 
     PageController.page.login = LoginPage;
     PageController.page.register = RegisterPage;
-    PageController.page.postList = PostListPage;
+    PageController.page.postEdit = PostEditPage;
   }
   
   ionViewDidLoad() {
