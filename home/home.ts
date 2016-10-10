@@ -8,6 +8,8 @@ import { PostListPage } from '../post-list/post-list';
 import { NavController, Events } from 'ionic-angular';
 import * as xi from '../../xmodule/interfaces/xapi';
 import { Xapi } from '../../xmodule/providers/xapi';
+import { PageController } from '../../xmodule/providers/page-controller';
+
 @Component({
   templateUrl: 'home.html'
 })
@@ -17,7 +19,8 @@ export class HomePage {
   constructor(
     private navCtrl: NavController,
     private events: Events,
-    private x: Xapi ) {
+    private x: Xapi
+    ) {
       this.x.getLoginData( x => this.login(x) );
     //this.navCtrl.push( Login );
     //this.navCtrl.push( RegisterPage );
@@ -40,6 +43,10 @@ export class HomePage {
       console.log('HomePage::constructor::event register');
       this.login(x);
     });
+
+    PageController.page.login = LoginPage;
+    PageController.page.register = RegisterPage;
+    PageController.page.postList = PostListPage;
   }
   
   ionViewDidLoad() {
