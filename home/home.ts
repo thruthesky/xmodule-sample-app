@@ -27,7 +27,7 @@ export class HomePage {
     //this.navCtrl.push( RegisterPage );
     //this.navCtrl.push( PasswordPage );
     //this.navCtrl.push( ForumCategoryPage );
-    this.navCtrl.push( PostEditPage );
+    // this.navCtrl.push( PostEditPage );
 
     this.events.subscribe( 'logout', () => {
       console.log('HomePage::constructor::event logout');
