@@ -57,6 +57,7 @@ export class RegisterPage {
     this.navCtrl.pop();
   }
   onError( msg: string ) {
+//    this.x.alert( 'error', msg );
     console.log("onError() ", msg );
   }
   onSuccess( user: xi.UserLoginData ) {

@@ -27,7 +27,7 @@ export class HomePage {
     //this.navCtrl.push( RegisterPage );
     //this.navCtrl.push( PasswordPage );
     //this.navCtrl.push( ForumCategoryPage );
-    // this.navCtrl.push( PostEditPage );
+    this.navCtrl.push( PostEditPage ); // test
 
     this.events.subscribe( 'logout', () => {
       console.log('HomePage::constructor::event logout');
@@ -47,8 +47,11 @@ export class HomePage {
     });
 
     PageController.page.login = LoginPage;
+    PageController.page.password = PasswordPage;
+    PageController.page.resign = ResignPage;
     PageController.page.register = RegisterPage;
     PageController.page.postEdit = PostEditPage;
+    
   }
   
   ionViewDidLoad() {
@@ -62,7 +65,8 @@ export class HomePage {
   }
   onClickLogin() {
     console.log('onClickLogin()');
-    this.navCtrl.push( LoginPage );
+    //this.navCtrl.push( LoginPage );
+    PageController.push( 'login', this );   
   }
   onClickLogout() {
         this.x.logout();
@@ -70,16 +74,20 @@ export class HomePage {
         this.logout();
   }
   onClickRegister() {
-    this.navCtrl.push( RegisterPage );
+    //this.navCtrl.push( RegisterPage );
+    PageController.push( 'register', this );   
   }
   onClickUpdate() {
-    this.navCtrl.push( RegisterPage );
+    //this.navCtrl.push( RegisterPage );
+    PageController.push( 'register', this );   
   }
   onClickChangePassword() {
-    this.navCtrl.push( PasswordPage );
+    //this.navCtrl.push( PasswordPage );
+    PageController.push( 'password', this );   
   }
   onClickResign() {
-    this.navCtrl.push( ResignPage );
+    //this.navCtrl.push( ResignPage );
+    PageController.push( 'resign', this );   
   }
   onClickCategory() {
     this.navCtrl.push( ForumCategoryPage );
