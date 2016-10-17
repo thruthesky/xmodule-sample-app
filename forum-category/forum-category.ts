@@ -25,7 +25,7 @@ export class ForumCategoryPage {
   ionViewDidLoad() {
     console.log('Hello ForumCategory Page');
     // @test
-    this.navCtrl.push( PostListPage, { slug: 'housemaid' });
+    // this.navCtrl.push( PostListPage, { slug: 'housemaid' });
   }
 
   onOpen( slug ) {
