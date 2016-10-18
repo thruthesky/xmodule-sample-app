@@ -9,8 +9,15 @@
   <xapi-post-list
     #xapiPostList
     [slug]="slug"
-    (view)="onClickView( $event )"
-    (vote)="onClicVote( $event )"
+    (edit)="onClickEdit( $event )"
+    (delete)="onClickDelete( $event )"
+    (report)="onClickReport( $event )"
+    (copy)="onClickCopy( $event )"
+    (move)="onClickMove( $event )"
+    (blind)="onClickBlind( $event )"
+    (block)="onClickBlock( $event )"
+    (message)="onClickMessage( $event )"
+    (userPosts)="onClickUserPosts( $event )"
   ></xapi-post-list>
   
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">

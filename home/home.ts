@@ -29,7 +29,8 @@ export class HomePage {
     //this.navCtrl.push( ForumCategoryPage );
     //this.navCtrl.push( PostEditPage ); // test
     
-    setTimeout( ()=> this.navCtrl.push( PostEditPage ), 500 );
+    let page = ForumCategoryPage;
+    setTimeout( ()=> this.navCtrl.push( page ), 400 );
 
     this.events.subscribe( 'logout', () => {
       console.log('HomePage::constructor::event logout');
@@ -48,6 +49,7 @@ export class HomePage {
       this.login(x);
     });
 
+    PageController.page.home = this;
     PageController.page.login = LoginPage;
     PageController.page.password = PasswordPage;
     PageController.page.resign = ResignPage;
@@ -68,7 +70,7 @@ export class HomePage {
   onClickLogin() {
     console.log('onClickLogin()');
     //this.navCtrl.push( LoginPage );
-    PageController.push( 'login', this );   
+    PageController.push( 'login', {} );   
   }
   onClickLogout() {
         this.x.logout();
@@ -77,19 +79,19 @@ export class HomePage {
   }
   onClickRegister() {
     //this.navCtrl.push( RegisterPage );
-    PageController.push( 'register', this );   
+    PageController.push( 'register', {} );   
   }
   onClickUpdate() {
     //this.navCtrl.push( RegisterPage );
-    PageController.push( 'register', this );   
+    PageController.push( 'register' );   
   }
   onClickChangePassword() {
     //this.navCtrl.push( PasswordPage );
-    PageController.push( 'password', this );   
+    PageController.push( 'password', {} );   
   }
   onClickResign() {
     //this.navCtrl.push( ResignPage );
-    PageController.push( 'resign', this );   
+    PageController.push( 'resign', {} );   
   }
   onClickCategory() {
     this.navCtrl.push( ForumCategoryPage );

@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { PostListComponent } from '../../xmodule/components/post-list';
+import { PostListComponent } from '../../xmodule/components/post-list/post-list';
+import { PageController } from '../../xmodule/providers/page-controller';
 
 @Component({
   selector: 'page-post-list',
@@ -40,4 +41,40 @@ export class PostListPage {
     });
   }
   
+  
+  
+
+  /**
+   * Use can use 'PageController' here or you can move customized edit page.
+   */
+    onClickEdit( post_ID ) {
+      console.log("PostListPage::onClickEdit()", post_ID);
+
+console.log( PageController.page );
+      PageController.push( 'postEdit', this );
+    }
+    onClickDelete( post_ID ) {
+
+    }
+    onClickReport( post_ID ) {
+
+    }
+    onClickCopy( post_ID ) {
+
+    }
+    onClickMove( post_ID ) {
+
+    }
+    onClickBlind( post_ID ) {
+
+    }
+    onClickBlock( post_ID ) {
+
+    }
+    onClickMessage( post_ID ) {
+
+    }
+    onClickUserPosts( post_ID ) {
+      
+    }
 }

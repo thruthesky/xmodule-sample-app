@@ -20,12 +20,15 @@ export class ForumCategoryPage {
     private x: Xapi
     ) {
     
+
+    // @test
+    setTimeout( () => {
+     this.navCtrl.push( PostListPage, { slug: 'housemaid' });
+    }, 400);
   }
 
   ionViewDidLoad() {
     console.log('Hello ForumCategory Page');
-    // @test
-    // this.navCtrl.push( PostListPage, { slug: 'housemaid' });
   }
 
   onOpen( slug ) {
