@@ -51,7 +51,7 @@ export class PostListPage {
       console.log("PostListPage::onClickEdit()", post_ID);
 
 console.log( PageController.page );
-      PageController.push( 'postEdit', this );
+      PageController.push( 'postEdit', { post_ID: post_ID });
     }
     onClickDelete( post_ID ) {
 

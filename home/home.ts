@@ -5,7 +5,8 @@ import { PasswordPage } from '../password/password';
 import { ResignPage } from '../resign/resign';
 import { ForumCategoryPage } from '../forum-category/forum-category';
 import { PostListPage } from '../post-list/post-list';
-import { PostEditPage } from '../post-edit/post-edit';
+//import { PostEditPage } from '../post-edit/post-edit';
+import { PostEditDefaultPage } from '../../xmodule/pages/post/edit/default/post-edit-default';
 import { NavController, Events } from 'ionic-angular';
 import * as xi from '../../xmodule/interfaces/xapi';
 import { Xapi } from '../../xmodule/providers/xapi';
@@ -29,9 +30,14 @@ export class HomePage {
     //this.navCtrl.push( ForumCategoryPage );
     //this.navCtrl.push( PostEditPage ); // test
     
-    let page = ForumCategoryPage;
-    setTimeout( ()=> this.navCtrl.push( page ), 400 );
-
+     //let page = ForumCategoryPage;
+     let page = PostEditDefaultPage;
+    setTimeout( ()=> this.navCtrl.push( page ), 800 );
+    
+    // 글 수정 페이지 이동.
+//    setTimeout( ()=> this.navCtrl.push( PostEditPage, {'post_ID' : 322 }), 500 );
+    
+    
     this.events.subscribe( 'logout', () => {
       console.log('HomePage::constructor::event logout');
       this.logout();
@@ -49,12 +55,18 @@ export class HomePage {
       this.login(x);
     });
 
+
+
+
+    x.serverUrl = "http://work.org/wordpress/index.php";
+
+    // @todo remove PageController
     PageController.page.home = this;
     PageController.page.login = LoginPage;
     PageController.page.password = PasswordPage;
     PageController.page.resign = ResignPage;
     PageController.page.register = RegisterPage;
-    PageController.page.postEdit = PostEditPage;
+    PageController.page.postEdit = PostEditDefaultPage;
     
   }
   
