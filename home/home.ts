@@ -23,7 +23,8 @@ export class HomePage {
     private events: Events,
     private x: Xapi
     ) {
-      this.x.getLoginData( x => this.login(x) );
+       this.x.getLoginData( x => this.login(x) );
+      //this.login( x.userLoginData );
     //this.navCtrl.push( Login );
     //this.navCtrl.push( RegisterPage );
     //this.navCtrl.push( PasswordPage );
@@ -71,7 +72,7 @@ export class HomePage {
   }
   
   ionViewDidLoad() {
-    console.log("HomePage::ionViewDidLoad()");
+//    console.log("HomePage::ionViewDidLoad()");
   }
   login( u: xi.UserLoginData ) {
     this.user = u;

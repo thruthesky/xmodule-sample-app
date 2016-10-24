@@ -15,10 +15,8 @@ export class RegisterPage {
     public navCtrl: NavController,
     private x: Xapi ) {
     this.appTitle = 'Home';
-    this.x.getLoginData( i => this.userLoggedIn( i ) );
-  }
-  userLoggedIn(i) {
-    console.log("RegisterPage::userLogged()", i);
+    //this.x.getLoginData( i => this.userLoggedIn( i ) );
+    // this.userLoggedIn( x.userLoginData );
   }
   ionViewDidLoad() {
     let register = this.register;
